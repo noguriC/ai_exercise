@@ -10,6 +10,7 @@ from torch.utils.data import Dataset, DataLoader
 from PIL import Image
 import torchvision.transforms as transforms
 import torch.optim as optim
+from nets.network import MGN
 
 image_root = 'CAMPUS-Human'
 train_root = 'Market1501'
@@ -21,10 +22,10 @@ query_vector = 'query_embed_{}.h5'.format(test_name)
 gallery_vector = 'gallery_embed_{}.h5'.format(test_name)
 ckpt_path = 'nets/resnet_v1_50.ckpt'
 log_dir = 'logs'
-batch_size = 64
+batch_size = 32
 embedding_dim = 2048
 init_lr = 0.001
-epoch = 1
+epoch = 10
 
 
 def data_load(csv):
@@ -82,8 +83,9 @@ train_dataset = CustomDataset(train_csv_file, train_root, size=(256, 128),
 train_loader = DataLoader(dataset=train_dataset, batch_size=batch_size, shuffle=True)
 
 # Model
-from nets.resnet import resnet50
+from nets.resnet_cbam import resnet50
 from nets.fc_layer import FC_layer
+model = MGN()
 model = resnet50(pretrained=False)
 fc_layer = FC_layer(model.fc.in_features, 751)
 model.fc = fc_layer
