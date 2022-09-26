@@ -1,0 +1,4 @@
+Accuracy Rank-1: 10.44% | Rank-3: 22.80% | Rank-5: 32.14%	res50_fine
+Accuracy Rank-1: 10.44% | Rank-3: 22.80% | Rank-5: 32.14%	res50_fine
+Accuracy Rank-1: 10.44% | Rank-3: 22.80% | Rank-5: 32.14%	res50_fine
+Accuracy Rank-1: 10.44% | Rank-3: 22.80% | Rank-5: 32.14%	res50_fine
