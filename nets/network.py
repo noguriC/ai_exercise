@@ -1,8 +1,8 @@
 import copy
 import torch
 import torch.nn as nn
-#from torchvision.models.resnet import resnet50, Bottleneck
-from nets.resnet_cbam import resnet50, Bottleneck
+from torchvision.models.resnet import resnet50, Bottleneck
+#from nets.resnet_cbam import resnet50, Bottleneck
 
 num_classes = 751  # change this depend on your dataset
 
@@ -13,7 +13,7 @@ class MGN(nn.Module):
 
         feats = 256
         resnet = resnet50(pretrained=False)
-
+        
         self.backbone = nn.Sequential(
             resnet.conv1,
             resnet.bn1,
@@ -86,12 +86,13 @@ class MGN(nn.Module):
 
     def forward(self, x):
         x = self.backbone(x)
-
+        
         p1 = self.p1(x)
         p2 = self.p2(x)
         p3 = self.p3(x)
-
+        
         zg_p1 = self.maxpool_zg_p1(p1)
+        
         zg_p2 = self.maxpool_zg_p2(p2)
         zg_p3 = self.maxpool_zg_p3(p3)
 

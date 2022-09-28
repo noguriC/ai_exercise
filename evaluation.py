@@ -35,11 +35,8 @@ print("Number of Query: {}\nNumber of Gallery: {}".format(query_embs.shape[0], g
 # Define dataset
 query_pids, query_fids = data_load(csv=os.path.join(image_root, query_csv_file))
 gallery_pids, gallery_fids = data_load(csv=os.path.join(image_root, gallery_csv_file))
-print(len(query_pids), len(query_fids), query_embs.shape)
-print(len(gallery_pids), len(gallery_fids), gallery_embs.shape)
-#exit()
+
 acc = np.zeros(len(gallery_pids), dtype=np.int32)
-print("acc {}", acc)
 for idx in count(step=batch_size):
     if idx > len(query_pids):
         break
@@ -50,8 +47,8 @@ for idx in count(step=batch_size):
         distances = cal_distance(query_embs[idx:idx_end], gallery_embs)
 
         pid_matches = gallery_pids[None] == pids[:, None]
-        scores = 1 / (1+distances)	
-        print(distances)
+        scores = 1 / (1+distances)
+
         for i in range(len(distances)):
             matching = pid_matches[i]
             argsort = np.argsort(distances[i])
@@ -62,8 +59,6 @@ for idx in count(step=batch_size):
             k = top_k[0]
             acc[k:] += 1
 
-print(acc)
-print(len(query_fids))
 acc = acc / len(query_fids)
 print('Accuracy Rank-1: {:.2%} | Rank-3: {:.2%} | Rank-5: {:.2%}'.format(acc[0], acc[2], acc[4]))
 with open('Evaluation_result.txt', mode='a') as fp:

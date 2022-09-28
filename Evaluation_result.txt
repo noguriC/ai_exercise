@@ -1,4 +1,10 @@
-Accuracy Rank-1: 10.44% | Rank-3: 22.80% | Rank-5: 32.14%	res50_fine
-Accuracy Rank-1: 10.44% | Rank-3: 22.80% | Rank-5: 32.14%	res50_fine
-Accuracy Rank-1: 10.44% | Rank-3: 22.80% | Rank-5: 32.14%	res50_fine
-Accuracy Rank-1: 10.44% | Rank-3: 22.80% | Rank-5: 32.14%	res50_fine
+Accuracy Rank-1: 1.37% | Rank-3: 4.12% | Rank-5: 6.87%	res50_fine
+Accuracy Rank-1: 1.37% | Rank-3: 4.12% | Rank-5: 6.87%	res50_fine
+Accuracy Rank-1: 1.37% | Rank-3: 4.12% | Rank-5: 6.87%	res50_fine
+Accuracy Rank-1: 68.13% | Rank-3: 82.42% | Rank-5: 87.09%	res50_fine
+Accuracy Rank-1: 68.13% | Rank-3: 82.42% | Rank-5: 87.09%	res50_fine
+Accuracy Rank-1: 68.13% | Rank-3: 82.42% | Rank-5: 87.09%	res50_fine
+Accuracy Rank-1: 68.13% | Rank-3: 82.42% | Rank-5: 87.09%	res50_fine
+Accuracy Rank-1: 75.55% | Rank-3: 86.54% | Rank-5: 89.01%	res50_fine
+Accuracy Rank-1: 75.82% | Rank-3: 88.19% | Rank-5: 93.68%	res50_fine
+Accuracy Rank-1: 81.32% | Rank-3: 91.76% | Rank-5: 94.51%	res50_fine
