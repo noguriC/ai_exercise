@@ -1,7 +1,8 @@
 import copy
 import torch
 import torch.nn as nn
-from torchvision.models.resnet import resnet50, Bottleneck
+#from torchvision.models.resnet import resnet50, Bottleneck
+from nets.resnet_cbam import resnet50, Bottleneck
 
 num_classes = 751  # change this depend on your dataset
 

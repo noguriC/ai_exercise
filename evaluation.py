@@ -10,7 +10,7 @@ gallery_csv_file = 'campus_gallery.csv'
 test_name = 'res50_fine'
 query_vector = 'query_embed_{}.h5'.format(test_name)
 gallery_vector = 'gallery_embed_{}.h5'.format(test_name)
-batch_size = 32
+batch_size = 64
 
 
 def data_load(csv):

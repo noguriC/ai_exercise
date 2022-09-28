@@ -315,7 +315,7 @@ def _resnet(
     if pretrained:
         state_dict = load_state_dict_from_url(model_urls[arch],
                                               progress=progress)
-        model.load_state_dict(state_dict)
+        model.load_state_dict(state_dict, strict=False)
     return model
 
 def resnet18_cbam(pretrained=False, **kwargs):
@@ -329,7 +329,7 @@ def resnet18_cbam(pretrained=False, **kwargs):
         pretrained_state_dict = model_zoo.load_url(model_urls['resnet18'])
         now_state_dict        = model.state_dict()
         now_state_dict.update(pretrained_state_dict)
-        model.load_state_dict(now_state_dict)
+        model.load_state_dict(now_state_dict, strict=False)
     return model
 
 
@@ -344,7 +344,7 @@ def resnet34_cbam(pretrained=False, **kwargs):
         pretrained_state_dict = model_zoo.load_url(model_urls['resnet34'])
         now_state_dict        = model.state_dict()
         now_state_dict.update(pretrained_state_dict)
-        model.load_state_dict(now_state_dict)
+        model.load_state_dict(now_state_dict, strict=False)
     return model
 
 
@@ -370,7 +370,7 @@ def resnet50_cbam(pretrained=False, **kwargs):
         pretrained_state_dict = model_zoo.load_url(model_urls['resnet50'])
         now_state_dict        = model.state_dict()
         now_state_dict.update(pretrained_state_dict)
-        model.load_state_dict(now_state_dict)
+        model.load_state_dict(now_state_dict, strict=False)
     return model
     
 
@@ -386,7 +386,7 @@ def resnet101_cbam(pretrained=False, **kwargs):
         pretrained_state_dict = model_zoo.load_url(model_urls['resnet101'])
         now_state_dict        = model.state_dict()
         now_state_dict.update(pretrained_state_dict)
-        model.load_state_dict(now_state_dict)
+        model.load_state_dict(now_state_dict, strict=False)
     return model
 
 
@@ -401,5 +401,5 @@ def resnet152_cbam(pretrained=False, **kwargs):
         pretrained_state_dict = model_zoo.load_url(model_urls['resnet152'])
         now_state_dict        = model.state_dict()
         now_state_dict.update(pretrained_state_dict)
-        model.load_state_dict(now_state_dict)
+        model.load_state_dict(now_state_dict, strict=False)
     return model

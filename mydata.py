@@ -22,10 +22,10 @@ query_vector = 'query_embed_{}.h5'.format(test_name)
 gallery_vector = 'gallery_embed_{}.h5'.format(test_name)
 ckpt_path = 'nets/resnet_v1_50.ckpt'
 log_dir = 'logs'
-batch_size = 32
+batch_size = 16
 embedding_dim = 2048
 init_lr = 0.001
-epoch = 1
+#epoch = 1
 
 def data_load(csv):
     dataset = np.genfromtxt(csv, delimiter=',', dtype='|U')

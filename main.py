@@ -61,6 +61,7 @@ class Main():
         #qf = extract_feature(self.model, tqdm(self.query_loader)).numpy()
         #gf = extract_feature(self.model, tqdm(self.test_loader)).numpy()
         self.model.eval()
+        
         with h5py.File(query_vector, 'w') as f_out:
             emb_storage = np.zeros((len(self.queryset), embedding_dim), np.float32)
             print('#### queryset size', len(self.queryset))
